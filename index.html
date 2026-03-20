@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-
     <div class="container">
         <h1>📝 Minhas Tarefas</h1>
         
@@ -16,11 +15,16 @@
             <button class="btn-add" onclick="addTask()">Adicionar</button>
         </div>
 
+        <div class="filter-group" style="display: flex; gap: 5px; margin-bottom: 15px;">
+            <button onclick="filterTasks('all')" style="flex: 1; font-size: 12px; cursor: pointer;">Todas</button>
+            <button onclick="filterTasks('pending')" style="flex: 1; font-size: 12px; cursor: pointer;">Pendentes</button>
+            <button onclick="filterTasks('completed')" style="flex: 1; font-size: 12px; cursor: pointer;">Feitas</button>
+        </div>
+
         <ul id="taskList"></ul>
 
         <button class="btn-clear" onclick="clearAll()">Excluir Todas</button>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
