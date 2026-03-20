@@ -1,22 +1,35 @@
-<div class="container">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <h1>📝 Tarefas</h1>
-        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Alternar modo escuro" style="cursor:pointer; border:none; background:none; font-size: 24px;">🌙</button>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Lista de Tarefas</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h1>📝 Tarefas</h1>
+            <button id="theme-toggle" onclick="toggleTheme()" aria-label="Alternar modo de cor" style="cursor:pointer; border:none; background:none; font-size: 24px;">🌙</button>
+        </header>
+        
+        <div class="input-group">
+            <label for="taskInput" class="sr-only">Nova tarefa</label>
+            <input type="text" id="taskInput" placeholder="Digite uma nova tarefa..." aria-required="true">
+            <button class="btn-add" onclick="addTask()">Adicionar</button>
+        </div>
+
+        <nav class="filter-group" aria-label="Filtros de tarefas" style="display: flex; gap: 5px; margin-bottom: 15px;">
+            <button onclick="filterTasks('all')" title="Mostrar todas as tarefas">Todas</button>
+            <button onclick="filterTasks('pending')" title="Mostrar apenas pendentes">Pendentes</button>
+            <button onclick="filterTasks('completed')" title="Mostrar apenas concluídas">Feitas</button>
+        </nav>
+
+        <ul id="taskList" aria-live="polite"></ul>
+
+        <button class="btn-clear" onclick="clearAll()" aria-label="Apagar todas as tarefas permanentemente">Excluir Todas</button>
     </div>
-    
-    <div class="input-group">
-        <label for="taskInput" class="sr-only" style="display:none;">Nova tarefa</label>
-        <input type="text" id="taskInput" placeholder="Ex: Estudar JavaScript..." aria-required="true">
-        <button class="btn-add" onclick="addTask()">Adicionar</button>
-    </div>
 
-    <nav class="filter-group" aria-label="Filtros de tarefas" style="display: flex; gap: 5px; margin-bottom: 15px;">
-        <button onclick="filterTasks('all')">Todas</button>
-        <button onclick="filterTasks('pending')">Pendentes</button>
-        <button onclick="filterTasks('completed')">Feitas</button>
-    </nav>
-
-    <ul id="taskList" aria-live="polite"></ul>
-
-    <button class="btn-clear" onclick="clearAll()" aria-label="Apagar todas as tarefas da lista">Excluir Todas</button>
-</div>
+    <script src="script.js"></script>
+</body>
+</html>
