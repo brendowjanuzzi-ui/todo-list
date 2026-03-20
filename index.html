@@ -13,11 +13,12 @@
         
         <div class="input-group">
             <input type="text" id="taskInput" placeholder="Digite uma nova tarefa...">
-            <button onclick="addTask()">Adicionar</button>
+            <button class="btn-add" onclick="addTask()">Adicionar</button>
         </div>
 
-        <ul id="taskList">
-            </ul>
+        <ul id="taskList"></ul>
+
+        <button class="btn-clear" onclick="clearAll()">Excluir Todas</button>
     </div>
 
     <script src="script.js"></script>
