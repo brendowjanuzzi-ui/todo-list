@@ -72,3 +72,20 @@ li {
     border-radius: 5px;
     cursor: pointer;
 }
+/* Estilo para os botões de filtro */
+.filter-group button {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+.filter-group button:hover {
+    background-color: #e9ecef;
+}
+
+/* Estilo para a tarefa concluída (riscada) */
+.completed {
+    border-left: 5px solid #28a745 !important;
+}
