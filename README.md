@@ -15,6 +15,9 @@ Projeto de gerenciamento de tarefas desenvolvido para praticar manipulação de 
 - [x] Adicionar filtro de tarefas (Concluídas / Pendentes)
 - [x] adicionar modo escuro (Dark Mode)
 
+## 🛠️ Próximos Passos
+- [ ] Melhorar a acessibilidade do formulário
+- [ ] Adicionar animações ao excluir tarefas
 ---
 
 ## 💻 Tecnologias
