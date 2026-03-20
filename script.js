@@ -1,53 +1,55 @@
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
 
-// Carregar tarefas ao abrir a página
-document.addEventListener('DOMContentLoaded', getTasks);
+// Carrega as tarefas salvas quando abre o site
+document.addEventListener('DOMContentLoaded', loadTasks);
 
 function addTask() {
-    const taskValue = taskInput.value.trim();
-    if (taskValue === "") return;
+    const text = taskInput.value.trim();
+    if (text === "") return;
 
-    createTaskElement(taskValue);
-    saveLocalTasks(taskValue); // Salva no navegador
-
+    createItem(text);
+    saveTask(text);
     taskInput.value = "";
-    taskInput.focus();
 }
 
-function createTaskElement(task) {
+function createItem(text) {
     const li = document.createElement('li');
-    li.innerHTML = `
-        <span>${task}</span>
-        <button onclick="removeTask(this)" style="background-color: #dc3545; padding: 5px 10px; font-size: 12px;">Excluir</button>
-    `;
+    li.innerHTML = `<span>${text}</span><button class="btn-delete" onclick="removeTask(this)">Excluir</button>`;
     taskList.appendChild(li);
 }
 
-function removeTask(button) {
-    const li = button.parentElement;
-    const taskText = li.querySelector('span').innerText;
-    removeLocalTasks(taskText); // Remove do navegador
-    taskList.removeChild(li);
+function removeTask(btn) {
+    const li = btn.parentElement;
+    const text = li.querySelector('span').innerText;
+    deleteFromStorage(text);
+    li.remove();
 }
 
-// Funções de Armazenamento (LocalStorage)
-function saveLocalTasks(task) {
+function clearAll() {
+    if (confirm("Limpar tudo?")) {
+        localStorage.clear();
+        taskList.innerHTML = "";
+    }
+}
+
+// Lógica de Salvar no Navegador (LocalStorage)
+function saveTask(text) {
     let tasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
-    tasks.push(task);
+    tasks.push(text);
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-function getTasks() {
+function loadTasks() {
     let tasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
-    tasks.forEach(task => createTaskElement(task));
+    tasks.forEach(createItem);
 }
 
-function removeLocalTasks(task) {
+function deleteFromStorage(text) {
     let tasks = JSON.parse(localStorage.getItem('tasks'));
-    const index = tasks.indexOf(task);
-    tasks.splice(index, 1);
+    tasks = tasks.filter(t => t !== text);
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+// Atalho Enter
 taskInput.addEventListener("keypress", (e) => { if (e.key === "Enter") addTask(); });
