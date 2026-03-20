@@ -1,3 +1,4 @@
+![Capa do Projeto](capa.png)
 # 📝 Todo-List Project
 
 Projeto de gerenciamento de tarefas desenvolvido para praticar manipulação de DOM, estilização CSS e deploy automatizado.
