@@ -13,10 +13,7 @@ Projeto de gerenciamento de tarefas desenvolvido para praticar manipulação de 
 - [x] Implementar salvamento automático (LocalStorage)
 - [x] Criar botão para excluir todas as tarefas de uma vez
 - [x] Adicionar filtro de tarefas (Concluídas / Pendentes)
- 
-
-## 🛠️ Próximos Passos
-- [ ] Melhorar a acessibilidade do formulário
+- [x] adicionar modo escuro (Dark Mode)
 
 ---
 
