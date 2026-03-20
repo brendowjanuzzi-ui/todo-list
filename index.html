@@ -8,7 +8,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>📝 Minhas Tarefas</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h1>📝 Tarefas</h1>
+            <button id="theme-toggle" onclick="toggleTheme()" style="cursor:pointer; border:none; background:none; font-size: 24px;">🌙</button>
+        </div>
         
         <div class="input-group">
             <input type="text" id="taskInput" placeholder="Digite uma nova tarefa...">
@@ -16,15 +19,16 @@
         </div>
 
         <div class="filter-group" style="display: flex; gap: 5px; margin-bottom: 15px;">
-            <button onclick="filterTasks('all')" style="flex: 1; font-size: 12px; cursor: pointer;">Todas</button>
-            <button onclick="filterTasks('pending')" style="flex: 1; font-size: 12px; cursor: pointer;">Pendentes</button>
-            <button onclick="filterTasks('completed')" style="flex: 1; font-size: 12px; cursor: pointer;">Feitas</button>
+            <button onclick="filterTasks('all')">Todas</button>
+            <button onclick="filterTasks('pending')">Pendentes</button>
+            <button onclick="filterTasks('completed')">Feitas</button>
         </div>
 
         <ul id="taskList"></ul>
 
         <button class="btn-clear" onclick="clearAll()">Excluir Todas</button>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
