@@ -1,34 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Lista de Tarefas</title>
-    <link rel="stylesheet" href="estilo.css">
-</head>
-<body>
-    <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <h1>📝 Tarefas</h1>
-            <button id="theme-toggle" onclick="toggleTheme()" style="cursor:pointer; border:none; background:none; font-size: 24px;">🌙</button>
-        </div>
-        
-        <div class="input-group">
-            <input type="text" id="taskInput" placeholder="Digite uma nova tarefa...">
-            <button class="btn-add" onclick="addTask()">Adicionar</button>
-        </div>
-
-        <div class="filter-group" style="display: flex; gap: 5px; margin-bottom: 15px;">
-            <button onclick="filterTasks('all')">Todas</button>
-            <button onclick="filterTasks('pending')">Pendentes</button>
-            <button onclick="filterTasks('completed')">Feitas</button>
-        </div>
-
-        <ul id="taskList"></ul>
-
-        <button class="btn-clear" onclick="clearAll()">Excluir Todas</button>
+<div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h1>📝 Tarefas</h1>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Alternar modo escuro" style="cursor:pointer; border:none; background:none; font-size: 24px;">🌙</button>
+    </div>
+    
+    <div class="input-group">
+        <label for="taskInput" class="sr-only" style="display:none;">Nova tarefa</label>
+        <input type="text" id="taskInput" placeholder="Ex: Estudar JavaScript..." aria-required="true">
+        <button class="btn-add" onclick="addTask()">Adicionar</button>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <nav class="filter-group" aria-label="Filtros de tarefas" style="display: flex; gap: 5px; margin-bottom: 15px;">
+        <button onclick="filterTasks('all')">Todas</button>
+        <button onclick="filterTasks('pending')">Pendentes</button>
+        <button onclick="filterTasks('completed')">Feitas</button>
+    </nav>
+
+    <ul id="taskList" aria-live="polite"></ul>
+
+    <button class="btn-clear" onclick="clearAll()" aria-label="Apagar todas as tarefas da lista">Excluir Todas</button>
+</div>
