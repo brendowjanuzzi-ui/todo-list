@@ -12,10 +12,10 @@ Projeto de gerenciamento de tarefas desenvolvido para praticar manipulação de 
 - [x] Deploy ativo via GitHub Pages
 - [x] Implementar salvamento automático (LocalStorage)
 - [x] Criar botão para excluir todas as tarefas de uma vez
+- [x] Adicionar filtro de tarefas (Concluídas / Pendentes)
  
 
 ## 🛠️ Próximos Passos
-- [ ] Adicionar filtro de tarefas (Concluídas / Pendentes)
 - [ ] Melhorar a acessibilidade do formulário
 
 ---
