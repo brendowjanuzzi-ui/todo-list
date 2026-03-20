@@ -1,79 +1,74 @@
-/* Configuração Geral */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9ecef;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    margin: 0;
     padding-top: 50px;
+    margin: 0;
 }
 
-/* Caixa Principal */
 .container {
-    background-color: white;
+    background: white;
     width: 90%;
     max-width: 400px;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
+h1 { text-align: center; color: #333; }
 
-/* Área de Input e Botão */
-.input-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 1.5rem;
-}
+.input-group { display: flex; gap: 10px; margin-bottom: 20px; }
 
 input {
     flex: 1;
     padding: 12px;
     border: 2px solid #ddd;
-    border-radius: 6px;
+    border-radius: 8px;
     outline: none;
-    transition: border-color 0.3s;
 }
 
-input:focus {
-    border-color: #007bff;
-}
+input:focus { border-color: #007bff; }
 
-button {
-    padding: 12px 20px;
+.btn-add {
     background-color: #28a745;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    font-weight: bold;
 }
 
-button:hover {
-    background-color: #218838;
+.btn-clear {
+    width: 100%;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-/* Lista de Tarefas */
-ul {
-    list-style: none;
-    padding: 0;
-}
+ul { list-style: none; padding: 0; }
 
 li {
     background: #f8f9fa;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     padding: 12px;
-    border-radius: 6px;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 4px solid #007bff;
+    border-left: 5px solid #007bff;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
