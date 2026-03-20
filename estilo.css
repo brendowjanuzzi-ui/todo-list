@@ -1,31 +1,62 @@
+/* Cores do Modo Claro (Padrão) */
+:root {
+    --bg-body: #f0f2f5;
+    --bg-container: #ffffff;
+    --text-color: #333333;
+    --border-input: #dddddd;
+    --bg-li: #f8f9fa;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Cores do Modo Escuro */
+[data-theme="dark"] {
+    --bg-body: #18191a;
+    --bg-container: #242526;
+    --text-color: #e4e6eb;
+    --border-input: #3a3b3c;
+    --bg-li: #3a3b3c;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     padding-top: 50px;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
-    background: white;
+    background: var(--bg-container);
     width: 90%;
     max-width: 400px;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: background-color 0.3s;
 }
 
-h1 { text-align: center; color: #333; }
+h1 { text-align: left; margin: 0; }
 
-.input-group { display: flex; gap: 10px; margin-bottom: 20px; }
+/* Grupo de Entrada */
+.input-group { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+}
 
 input {
     flex: 1;
     padding: 12px;
-    border: 2px solid #ddd;
+    background: var(--bg-container);
+    color: var(--text-color);
+    border: 2px solid var(--border-input);
     border-radius: 8px;
     outline: none;
+    transition: border-color 0.3s;
 }
 
 input:focus { border-color: #007bff; }
@@ -34,27 +65,35 @@ input:focus { border-color: #007bff; }
     background-color: #28a745;
     color: white;
     border: none;
-    padding: 12px;
+    padding: 12px 20px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
 }
 
-.btn-clear {
-    width: 100%;
-    background-color: #6c757d;
-    color: white;
-    border: none;
-    padding: 10px;
-    margin-top: 20px;
-    border-radius: 8px;
+/* Grupo de Filtros */
+.filter-group button {
+    flex: 1;
+    padding: 8px;
+    font-size: 12px;
     cursor: pointer;
+    border: 1px solid var(--border-input);
+    background: var(--bg-container);
+    color: var(--text-color);
+    border-radius: 6px;
+    transition: background 0.3s;
 }
 
-ul { list-style: none; padding: 0; }
+.filter-group button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Lista de Tarefas */
+ul { list-style: none; padding: 0; margin-top: 20px; }
 
 li {
-    background: #f8f9fa;
+    background: var(--bg-li);
     margin-bottom: 10px;
     padding: 12px;
     border-radius: 8px;
@@ -62,6 +101,12 @@ li {
     justify-content: space-between;
     align-items: center;
     border-left: 5px solid #007bff;
+    transition: background 0.3s;
+}
+
+/* Estilo para quando a tarefa está pronta */
+.completed {
+    border-left-color: #28a745 !important;
 }
 
 .btn-delete {
@@ -72,20 +117,15 @@ li {
     border-radius: 5px;
     cursor: pointer;
 }
-/* Estilo para os botões de filtro */
-.filter-group button {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: #fff;
-    transition: all 0.3s;
-}
 
-.filter-group button:hover {
-    background-color: #e9ecef;
-}
-
-/* Estilo para a tarefa concluída (riscada) */
-.completed {
-    border-left: 5px solid #28a745 !important;
+.btn-clear {
+    width: 100%;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
 }
